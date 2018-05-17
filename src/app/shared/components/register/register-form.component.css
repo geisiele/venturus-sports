@@ -1,0 +1,99 @@
+#register .container .row {
+    display: flex;
+    justify-content: center;
+}
+
+#register .container .row form .col-2:first-child{
+    margin-right: 10%;
+}
+
+#register .container .row .form {
+    border-top: solid .1rem #D5D5D5;
+    margin: 3rem 0 0 0;
+    padding: 3rem 0 0 0;
+}
+
+#register .registration-items .item h3 {
+    color: #23C2B3;
+    font-size: 1.3rem;
+    font-weight: 300;
+    margin: 0 0 1rem 0;
+}
+
+#register .registration-items .item i {
+    color: #1ABC9C;
+    font-size: 3.1rem;
+    float: left;
+}
+
+#register .registration-items .item p {
+    float: left;
+    width: 70%;
+    margin: 0 0 0 1.3rem;
+}
+
+#register .actions {
+    display: flex !important;
+    justify-content: flex-start !important;
+    margin: 0 0 0 2.4rem;
+}
+
+#register .actions button {
+    border-radius: 5px;
+    background-color: #E3E3E3;
+    padding: .8rem 1.2rem .6rem 1.2rem;
+    color: #8E97A6;
+    margin: 0 .5rem 2rem 0;
+    font-weight: 300;
+}
+
+#register .actions .save {
+    background-color: #1ABC9C;
+    color: #FFFFFF;
+}
+
+.page-title {
+    margin: 3rem 0 2rem 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title hr {
+    border-bottom: solid .2rem #F1F1F1;
+    margin: 0 4rem;
+    font-size: 2rem;    
+}
+
+#register .page-title hr {
+    margin: 0 0 0 4rem;
+}
+
+.page-title h2 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.page-title .form-control {
+    float: right;
+    width: 30%;
+}
+
+form span {
+    display: block;
+    font-weight: 600;
+}
+
+form input[type="text"] {
+    margin: 5px 0;
+}
+
+form .input {
+    height: 80px;
+    padding-bottom: 10px;
+}
+
+form .input .message {
+    color: red;
+}

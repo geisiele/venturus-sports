@@ -1,0 +1,220 @@
+* {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+vertical-align: baseline;
+}
+
+body {
+font-weight: 400;
+font-size: .875rem;
+color: rgba(0,0,0,.87);
+line-height: 1.5;
+font-family: 'Open Sans', sans-serif;
+min-width: 360px;
+}
+
+ul {
+list-style: none;
+}
+
+a {
+text-decoration: none;
+}
+
+.cl::after {
+display: block;
+clear: both;
+content: "";
+}
+
+/*-- container -- */ 
+
+.container .row .logo .fa-volleyball-ball {
+    background-color: #1ABC9C;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container .row .logo .fa-volleyball-ball.md {
+    color: #FFF;
+    font-size: 25px;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.container .row .logo, .container .row .account {
+    padding: 30px 0;
+}
+
+.container .row .logo {
+    float: left;
+    display: flex;
+    align-items: center;
+}
+
+.container .row .logo h1 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0 0 0 1rem;
+    color: #333333;
+}
+
+.container .row .logo i, .container .row .logo h1{
+    float: left;
+}
+
+.container .row .account {
+    float: right;
+}
+
+.container .row .account ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.container .row .account ul li.avatar{
+    border: solid .1rem #333;
+    border-radius: 2rem;
+    padding: .3rem;
+    margin: 0 .8rem 0 0;
+}
+
+.container .row .account ul li.name a{
+    color: #333333;
+}
+
+.container .row .account ul li.name a .fa-angle-down {
+    margin: 0 0 0 .7rem;
+    font-size: 1.1rem;
+}
+
+/*-- grid -- */ 
+
+.container{
+width: 90%; 
+max-width: 1980px;      
+}
+
+[class*='col-'] {
+float: left;
+min-height: 1px; 
+}
+
+.col-1{
+width: 16.66%; 
+}
+.col-2{
+width: 33.33%; 
+}
+.col-3{
+width: 50%; 
+}
+.col-4{
+width: 66.664%;
+}
+.col-5{
+width: 83.33%;
+}
+.col-6{
+width: 100%;
+}
+
+.row:before, 
+.row:after {
+display: block;
+clear: both;
+content: "";
+}
+
+/*-- Form -- */
+label {
+    display: inline-block;
+    position: relative;
+    padding-left: 35px;
+    margin: 12px 12px 32px 0;
+}
+
+label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.check {
+    position: absolute;
+    top: -3px;
+    left: 0;
+    border: solid .1rem #D2D2D2;
+}
+
+label input[type="checkbox"] ~ .check {
+    border-radius: 5px;
+    height: 25px;
+    width: 25px;
+}
+
+label input[type="radio"] ~ .check {
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+}
+
+label:hover input ~ .check {
+    border: solid .1rem #1ABC9C;
+    cursor: pointer;
+}
+
+label input:checked ~ .check {
+    border: solid .1rem #1ABC9C;
+}
+
+.check:after {
+content: "";
+position: absolute;
+display: none;
+}
+
+label input:checked ~ .check:after {
+display: block;
+}
+
+label input[type="checkbox"] ~ .check:after {
+left: 9px;
+top: 5px;
+width: 5px;
+height: 10px;
+border: solid #333333;
+border-width: 0 3px 3px 0;
+-webkit-transform: rotate(45deg);
+-ms-transform: rotate(45deg);
+transform: rotate(45deg);
+}
+
+label input[type="radio"] ~ .check:after {
+    top: 5px;
+    left: 5px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #333333;
+  }
+
+  input[type="text"] {
+    border-radius: 5px;
+    height: 35px;
+    padding: 0 10px;
+    width: 100%;
+    border: solid .1rem #D2D2D2;
+    position: relative;
+    opacity: 1;
+}
+
+input[type="text"]:focus {
+    border: solid .1rem #1ABC9C;
+}

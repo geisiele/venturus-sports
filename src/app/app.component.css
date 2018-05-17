@@ -1,0 +1,67 @@
+nav.breadcrumb {
+    background-color: #F9F9F9;
+    padding: .6rem 0;
+}
+
+nav.breadcrumb ul li{
+    float: left;
+}
+
+nav.breadcrumb ul li a {
+    color: #1ABC9C;
+}
+
+nav.breadcrumb ul li a:hover {
+    text-decoration: underline;
+}
+
+nav.breadcrumb ul li::after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f105';
+    color: #999999;
+    padding: 0 .5rem;
+}
+
+nav.breadcrumb ul li:last-child::after {
+    content: '';
+}
+
+#sport-details {
+    background-color: #BAEBE1;
+    padding: 30px 0;
+    display: flex;
+}
+
+#sport-details .container .row .item {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 3rem 0 0;
+}
+
+#sport-details .container .row .item i {
+    color: #3AC5A9;
+    font-size: 3.5rem;
+}
+
+#sport-details .container .row .item .text {
+    padding: 0 0 0 .7rem;
+}
+
+#sport-details .container .row .item .text span {
+    color: #676668;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+#sport-details .container .row .item .text p {
+    color: #333333;
+    font-size: 1.7rem;
+    font-weight: 700;
+}
+
+#sport-details .container .row .item i,
+#sport-details .container .row .item .text {
+    float: left;
+}

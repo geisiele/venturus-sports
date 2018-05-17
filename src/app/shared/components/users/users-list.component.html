@@ -1,0 +1,41 @@
+<section id="users">
+  <div class="container">
+    <div class="page-title">
+      <h2>Users</h2>
+      <hr class="col-6">
+      <input type="text" #iptSearch formControlName="searchControl" class="form-control" placeholder="Filter table content">
+    </div>
+    <div class="row">
+      <table class="table">
+        <thead class="thead-light">
+          <th>Username</th>
+          <th>Name</th>
+          <th>E-mail</th>
+          <th>City</th>
+          <th>Ride in group</th>
+          <th>Day of the week</th>
+          <th>Posts</th>
+          <th>Albums</th>
+          <th>Photos</th>
+          <th></th>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{teacher.name}}</td>
+            <td>{{teacher.subject}}</td>
+            <td>{{teacher.address}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>{{teacher.mobile}}</td>
+            <td>
+              <button type="button" class="btn btn-secondary btn-sm" (click)="deleteTeacher(teacher.id)">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

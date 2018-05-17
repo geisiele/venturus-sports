@@ -1,0 +1,35 @@
+.page-title {
+    margin: 3rem 0 2rem 0;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.page-title hr {
+    border-bottom: solid .2rem #F1F1F1;
+    margin: 0 4rem;
+    font-size: 2rem;    
+}
+
+.page-title h2 {
+    font-weight: 400;
+    font-size: 2rem;
+}
+
+.page-title .form-control {
+    float: right;
+    width: 30%;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  th, td {
+    padding: 0.5rem;
+    text-align: left;
+  }
+  tbody tr:nth-child(even) {
+    background: #eee;
+  }
