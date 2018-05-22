@@ -19,7 +19,6 @@
 
 .page-title .form-control {
     float: right;
-    width: 30%;
 }
 
 table {
@@ -33,3 +32,25 @@ table {
   tbody tr:nth-child(even) {
     background: #eee;
   }
+
+  .btn-sm {
+    background-color: transparent;
+    width: 30px;
+  }
+
+  .btn-sm:hover {
+    cursor: pointer;
+  }
+
+  .btn-sm i {
+    color: #1ABC9C;
+    display: none;
+  }
+
+  table tbody tr:hover {
+    background-color: #dcdcdc;
+  }
+
+  table tbody tr:hover .btn-sm i {
+    display: block !important;
+}

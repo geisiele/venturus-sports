@@ -31,79 +31,50 @@
     </div>
     <div class="row">
       <div class="col-5 form">
-        <form>
+        <form [formGroup]="fRegister" #frm="ngForm">
           <div class="row">
             <div class="col-2">
               <div class="input">
                 <span>Username</span>
-                <input type="text">
-                <div class="message">Instructions to show on input focus.</div>
+                <input type="text" required #username formControlName="username" [(ngModel)]="oUser.username">
+                <div class="message" *ngIf="fRegister.controls['username'].touched && fRegister.hasError('required',['username'])">Field required.</div>
               </div>
               <div class="input">
                 <span>Name</span>
-                <input type="text">
+                <input type="text" required #name formControlName="name" [(ngModel)]="oUser.name">
+                <div class="message" *ngIf="fRegister.controls['name'].touched && fRegister.hasError('required',['name'])">Field required.</div>
               </div>
               <div class="input">
                 <span>E-mail</span>
-                <input type="text">
+                <input type="text" required #email formControlName="email" [(ngModel)]="oUser.email">
+                <div class="message" *ngIf="fRegister.controls['email'].touched && fRegister.hasError('required',['email'])">Field required.</div>
               </div>
             </div>
             <div class="col-3">
               <div class="input">
                 <span>City</span>
-                <input type="text">
+                <input type="text" #city formControlName="city" [(ngModel)]="oUser.address.city">
               </div>
               <div>
                 <span>Ride in group?</span>
-                <label>Always
-                  <input type="radio" checked="checked">
-                  <span class="check"></span>
-                </label>
-                <label>Sometimes
-                  <input type="radio">
-                  <span class="check"></span>
-                </label>
-                <label>Never
-                  <input type="radio">
+                <label *ngFor="let item of lRide; let idx = index">{{ item }}
+                  <input type="radio" name="ride" value="{{item}}" [checked]="idx === 0" (change)="onChangeRadio(item)">
                   <span class="check"></span>
                 </label>
               </div>
               <div>
                 <span>Days of the week</span>
-                <label>Sun
-                  <input type="checkbox" checked="checked">
-                  <span class="check"></span>
-                </label>
-                <label>Mon
-                  <input type="checkbox">
-                  <span class="check"></span>
-                </label>
-                <label>Tue
-                  <input type="checkbox">
-                  <span class="check"></span>
-                </label>
-                <label>Wed
-                  <input type="checkbox">
-                  <span class="check"></span>
-                </label>
-                <label>Thu
-                  <input type="checkbox">
-                  <span class="check"></span>
-                </label>
-                <label>Fri
-                  <input type="checkbox">
-                  <span class="check"></span>
-                </label>
-                <label>Sat
-                  <input type="checkbox">
+                <label *ngFor="let item of lDaysOfWeek">{{ item }}
+                  <input type="checkbox" formControlName="{{item}}" name="daysOfWeek" (change)="onChangeCheckbox(item, $event.target.checked)">
                   <span class="check"></span>
                 </label>
               </div>
             </div>
           </div>
           <div class="row actions">
-            <button class="save" (click)="recriaForm()" type="submit">Save</button>
-            <button type="submit">Discard</button>
+            <button class="save" type="submit" (click)="addUser(oUser)" [disabled]="fRegister.invalid">Save</button>
+            <button type="submit" (click)="discard()">Discard</button>
+            <div class="sucess" *ngIf="boSave">Saved successfully!</div>
           </div>
         </form>
       </div>

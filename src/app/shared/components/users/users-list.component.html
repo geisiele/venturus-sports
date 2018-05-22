@@ -2,8 +2,10 @@
   <div class="container">
     <div class="page-title">
       <h2>Users</h2>
-      <hr class="col-6">
-      <input type="text" #iptSearch formControlName="searchControl" class="form-control" placeholder="Filter table content">
+      <hr class="col-4">
+      <form [formGroup]="formUserList">
+        <input type="text" #filterUsers formControlName="filterUsers" class="form-control col-3" placeholder="Filter table content">
+      </form>
     </div>
     <div class="row">
       <table class="table">
@@ -20,18 +22,25 @@
           <th></th>
         </thead>
         <tbody>
-          <tr>
-            <td>{{teacher.name}}</td>
-            <td>{{teacher.subject}}</td>
-            <td>{{teacher.address}}</td>
-            <td>{{teacher.mobile}}</td>
-            <td>{{teacher.mobile}}</td>
-            <td>{{teacher.mobile}}</td>
-            <td>{{teacher.mobile}}</td>
-            <td>{{teacher.mobile}}</td>
-            <td>{{teacher.mobile}}</td>
+          <tr *ngFor="let user of filter(userService.lUser)">
+            <td>{{user.username}}</td>
+            <td>{{user.name}}</td>            
+            <td><a href="mailto:{{user.email}}" target="_top">{{user.email}}</a></td>
+            <ng-template [ngIf]="user.address.geo.lat" [ngIfElse]="wsGeo">
+                <td><a href="http://maps.google.com/maps?q={{user.address.geo.lat}},{{user.address.geo.lng}}" target="_blank">{{user.address.city}}</a></td>
+            </ng-template>
+            <ng-template #wsGeo>
+                <td>{{user.address.city}}</td>
+            </ng-template>
+            <td>{{user.ride}}</td>
+            <td>{{user.daysOfWeek}}</td>
+            <td>{{user.posts.length}}</td>
+            <td>{{user.albums.length}}</td>
+            <td>{{numberPhotos(user)}}</td>
             <td>
-              <button type="button" class="btn btn-secondary btn-sm" (click)="deleteTeacher(teacher.id)">Delete</button>
+              <button type="button" class="btn btn-secondary btn-sm" (click)="delete(user)">
+                <i class="far fa-trash-alt"></i>
+              </button>
             </td>
           </tr>
         </tbody>
